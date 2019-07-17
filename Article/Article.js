@@ -112,9 +112,23 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
-const createNewArticle = () =>{
-  const article = document.querySelector('.articles');
-  const newArticle = document.createElement('div');
-  newArticle.classList.add('article');
-  const 
+const createNewArticle = (objData) =>{
+  // creating div
+  const articleBox = document.createElement('div');
+  articleBox.className = 'article';
+    
+  // adding components into div
+  const header = document.createElement('h2');
+  const date = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pTree = document.createElement('p');
+
+  
+  header.textContent = objData.tittle;
+  date.textContent = objData.date;
+  pOne.textContent = objData.firstParagraph;
+  pTwo.textContent = objData.secondParagraph;
+  pTree.textContent = objData.thirdParagraph;
 }
+
