@@ -140,10 +140,23 @@ const createNewArticle = (objData) =>{
   pOne.textContent = objData.firstParagraph;
   pTwo.textContent = objData.secondParagraph;
   pTree.textContent = objData.thirdParagraph;
-  btn.textContent += 'expand';
+  btn.textContent = 'expand';
 
-  
+
+  btn.addEventListener('click', ()=>{
+    articleBox.classList.toggle('article-open');
+  });
+
+  return articleBox;
 }
+
+// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+data.map(articles => {
+  const article = createNewArticle(articles);
+  const newArticle = document.querySelector('.articles');
+  newArticle.appendChild(article);
+})
 
 
 
