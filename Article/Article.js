@@ -115,14 +115,24 @@ const data = [
 const createNewArticle = (objData) =>{
   // creating div
   const articleBox = document.createElement('div');
-  articleBox.className = 'article';
+  articleBox.classList.add('article');
     
-  // adding components into div
+  // adding element into div
   const header = document.createElement('h2');
+  // header.classList.add('h2');
+  articleBox.appendChild(header);
   const date = document.createElement('p');
+  date.classList.add('date');
+  articleBox.appendChild(date);
   const pOne = document.createElement('p');
+  articleBox.appendChild(pOne);
   const pTwo = document.createElement('p');
+  articleBox.appendChild(pTwo);
   const pTree = document.createElement('p');
+  articleBox.appendChild(pTree);
+  const btn = document.createElement('span');
+  btn.classList.add('expandButton');
+  articleBox.appendChild(btn);
 
   
   header.textContent = objData.tittle;
@@ -130,5 +140,12 @@ const createNewArticle = (objData) =>{
   pOne.textContent = objData.firstParagraph;
   pTwo.textContent = objData.secondParagraph;
   pTree.textContent = objData.thirdParagraph;
+  btn.textContent += 'expand';
+
+  
 }
+
+
+
+
 
